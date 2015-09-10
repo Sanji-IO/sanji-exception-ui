@@ -23,9 +23,6 @@ var config = {
     },
     extensions: ['', '.js', '.json', 'html', 'scss', 'css']
   },
-  resolveLoader: {
-    root: nodeRoot
-  },
   module: {
     preLoaders: [
       {test: /\.js$/, loader: "eslint", exclude: /(node_modules)/}
