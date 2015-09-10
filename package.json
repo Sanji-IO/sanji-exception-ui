@@ -1,6 +1,6 @@
 {
   "name": "sanji-exception-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "sanji-exception-ui UI",
   "scripts": {
     "test": "NODE_ENV=test karma start",
