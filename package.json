@@ -61,7 +61,7 @@
   "homepage": "https://github.com/Sanji/sanji-exception-ui",
   "dependencies": {
     "angular": "~1.4.5",
-    "sanji-logger-ui": "~1.0.4",
+    "sanji-logger-ui": "~1.0.5",
     "jquery": "~2.1.4",
     "toastr": "~2.1.2"
   }
