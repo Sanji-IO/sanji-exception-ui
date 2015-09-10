@@ -2,6 +2,7 @@
   "name": "sanji-exception-ui",
   "version": "1.0.1",
   "description": "sanji-exception-ui UI",
+  "main": "index",
   "scripts": {
     "test": "NODE_ENV=test karma start",
     "start": "NODE_ENV=development node server/dev-server.js",
@@ -60,7 +61,7 @@
   "homepage": "https://github.com/Sanji/sanji-exception-ui",
   "dependencies": {
     "angular": "~1.4.5",
-    "sanji-logger-ui": "~1.0.3",
+    "sanji-logger-ui": "~1.0.4",
     "jquery": "~2.1.4",
     "toastr": "~2.1.2"
   }
