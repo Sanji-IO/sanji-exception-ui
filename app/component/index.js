@@ -6,5 +6,5 @@ import ExceptionService from './exception.service';
 let app = angular.module('sanji.exception', [loggerModule]);
 app.provider('exceptionHandler', provider);
 app.config(config);
-app.service(ExceptionService);
+app.service('exception', ExceptionService);
 export default app = app.name
