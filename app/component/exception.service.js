@@ -11,17 +11,18 @@ class ExceptionService {
     return function(e) {
       let thrownDescription;
       let newMessage;
-      if (e.data && e.data.description) {
-        thrownDescription = '\n' + e.data.description;
+      if (e.data && e.data.message) { // handling like http request error
+        thrownDescription = '\n' + e.data.message;
         newMessage = message + thrownDescription;
+        logger.error(newMessage, e);
+        return $q.reject(e);
       }
-      e.data.description = newMessage;
-      logger.error(newMessage);
-      return $q.reject(e);
+      else {
+        logger.error(message, e);
+      }
     };
   }
 }
 
 ExceptionService.$inject = $inject;
-
 export default ExceptionService;
