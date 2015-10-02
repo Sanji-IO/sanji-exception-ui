@@ -11,7 +11,7 @@ class ExceptionService {
     return function(e) {
       let thrownDescription;
       let newMessage;
-      if (e.data && e.data.message) { // handling like http request error
+      if ('object' === typeof e && e.data && e.data.message) { // handling like http request error
         thrownDescription = '\n' + e.data.message;
         newMessage = message + thrownDescription;
         logger.error(newMessage, e);

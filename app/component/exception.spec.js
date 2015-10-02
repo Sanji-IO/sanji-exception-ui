@@ -4,6 +4,8 @@ import { expect } from 'chai' ;
 import ExceptionService from './exception.service';
 
 let component;
+// let injector;
+let logger;
 
 describe('Service: exception', function() {
   before(function setupEnvironment(done) {
@@ -18,7 +20,7 @@ describe('Service: exception', function() {
   beforeEach(function() {
     let injector = angular.injector(['ng', require('sanji-logger-ui')]);
     let $q = injector.get('$q');
-    let logger = injector.get('logger');
+    logger = injector.get('logger');
     component = new ExceptionService($q, logger);
   });
 
@@ -29,6 +31,30 @@ describe('Service: exception', function() {
 
   it('should be have a catcher function', function () {
     expect(component.catcher).to.be.a('function');
+  });
+
+  describe('#catcher()', function() {
+    it('should return a function', function () {
+      expect(component.catcher()).to.be.a('function');
+    });
+
+    it('should log exception', function () {
+      let string = '';
+      logger.error = function() {
+        return string += '[Error]';
+      };
+      component.catcher('somthing was wrong!')();
+      expect(string).to.equal('[Error]');
+    });
+
+    it('should log exception with reason', function () {
+      let string = '';
+      logger.error = function() {
+        return string += '[Error]\n[Reason]';
+      };
+      component.catcher('somthing was wrong!')({data: { message: 'Internal Error!', status: 500 }});
+      expect(string).to.equal('[Error]\n[Reason]');
+    });
   });
 
   after(function destroySyntheticBrowser() {
