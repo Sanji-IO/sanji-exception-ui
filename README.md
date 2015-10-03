@@ -67,7 +67,7 @@ AppController.$inject = ['$http', 'exception'];
 
 ## Contact
 
-Author: Zack Yang &copy; 2014
+Author: Zack Yang &copy; 2015
 
 * [@zack9433](https://twitter.com/zack9433)
 
