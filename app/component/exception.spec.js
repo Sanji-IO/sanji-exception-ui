@@ -4,11 +4,10 @@ import { expect } from 'chai' ;
 import ExceptionService from './exception.service';
 
 let component;
-// let injector;
 let logger;
 
 describe('Service: exception', function() {
-  before(function setupEnvironment(done) {
+  beforeEach(function setupEnvironment(done) {
     benv.setup(function () {
       benv.expose({
         angular: benv.require('../../node_modules/angular/angular.js', 'angular')
@@ -17,11 +16,21 @@ describe('Service: exception', function() {
     });
   });
 
+  beforeEach(function loadCalcModule() {
+    // force to load the module from scratch
+    delete require.cache[require.resolve('sanji-logger-ui')];
+    require('sanji-logger-ui');
+  });
+
   beforeEach(function() {
-    let injector = angular.injector(['ng', require('sanji-logger-ui')]);
+    let injector = angular.injector(['ng', 'sanji.logger']);
     let $q = injector.get('$q');
     logger = injector.get('logger');
     component = new ExceptionService($q, logger);
+  });
+
+  afterEach(function destroySyntheticBrowser() {
+    benv.teardown();
   });
 
   it('should start with injected services', function () {
@@ -55,9 +64,5 @@ describe('Service: exception', function() {
       component.catcher('somthing was wrong!')({data: { message: 'Internal Error!', status: 500 }});
       expect(string).to.equal('[Error]\n[Reason]');
     });
-  });
-
-  after(function destroySyntheticBrowser() {
-    benv.teardown(true);
   });
 });
