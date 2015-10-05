@@ -13,7 +13,7 @@ config.entry = {
 config.output.filename = 'sanji-exception-ui.js';
 config.output.library = 'sjException';
 config.externals = {
-  'sanji-logger-ui': 'sjLogger'
+  'sanji-exception-ui': 'sjException'
 };
 
 config.module.loaders = [
