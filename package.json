@@ -4,12 +4,12 @@
   "description": "sanji-exception-ui UI",
   "version": "0.0.0-semantically-released",
   "main": "index",
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
   "config": {
     "ghooks": {
       "pre-commit": "npm run test:once && npm run check-coverage"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
   },
   "scripts": {
@@ -24,7 +24,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
-    "angular-mocks": "1.4.7",
+    "angular-mocks": "~1.4.8",
     "autoprefixer-loader": "~3.1.0",
     "babel-core": "~5.8.34",
     "babel-eslint": "~4.1.6",
@@ -74,7 +74,7 @@
   "license": "MIT",
   "homepage": "https://github.com/Sanji/sanji-exception-ui",
   "dependencies": {
-    "angular": "1.4.7",
+    "angular": "~1.4.8",
     "sanji-logger-ui": "~1.1.0"
   }
 }
