@@ -1,5 +1,6 @@
+import 'toastr.scss';
 import './app.scss';
-import 'angular';
+import angular from 'angular';
 import exception from './component';
 
 angular.module('webapp', [exception])

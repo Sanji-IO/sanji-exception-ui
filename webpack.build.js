@@ -11,9 +11,21 @@ config.entry = {
   'sanji-ui': './component/index.js'
 };
 config.output.filename = 'sanji-exception-ui.js';
+config.output.libraryTarget = 'umd';
 config.output.library = 'sjException';
 config.externals = {
-  'sanji-exception-ui': 'sjException'
+  angular: {
+    root: 'angular',
+    commonjs2: 'angular',
+    commonjs: 'angular',
+    amd: 'angular'
+  },
+  'sanji-logger-ui': {
+    root: 'sjLogger',
+    commonjs2: 'sanji-logger-ui',
+    commonjs: 'sanji-logger-ui',
+    amd: 'sanji-logger-ui'
+  }
 };
 
 config.module.loaders = [
@@ -25,7 +37,11 @@ config.module.loaders = [
 
 config.plugins.push(
   new ExtractTextPlugin('sanji-exception-ui.css'),
-  new WebpackNotifierPlugin({title: 'Webpack'}),
-  new webpack.optimize.DedupePlugin()
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  })
 );
 module.exports = config;

@@ -11,7 +11,6 @@ describe('Service: exception', function() {
     benv.setup(function () {
       global.Node = window.Node; // prevent error: https://github.com/angular/angular.js/issues/13442
       benv.expose({
-        Node: {},
         angular: benv.require('../../node_modules/angular/angular.js', 'angular')
       });
       done();
