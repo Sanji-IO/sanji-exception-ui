@@ -13,6 +13,7 @@ class ExceptionHandlerProvider {
   }
 
   $get() {
+    'ngInject';
     let config = this.config;
 
     return {
