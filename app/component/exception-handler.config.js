@@ -1,4 +1,5 @@
 export default ($provide) => {
+  'ngInject';
   $provide.decorator('$exceptionHandler', extendExceptionHandler);
   extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];
 
