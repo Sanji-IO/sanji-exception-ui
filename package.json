@@ -74,9 +74,9 @@
     "exception"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/Sanji/sanji-exception-ui",
+  "homepage": "https://github.com/Sanji-IO/sanji-exception-ui",
   "dependencies": {
-    "angular": "1.5.0",
+    "angular": "~1.5.0",
     "sanji-logger-ui": "~1.2.2"
   }
 }
