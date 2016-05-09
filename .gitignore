@@ -5,3 +5,4 @@ node_modules/
 .tern-project
 npm-debug.log
 coverage/
+.nyc_output/

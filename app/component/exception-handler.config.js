@@ -28,4 +28,4 @@ export default ($provide) => {
       logger.error(exception.message, errorData);
     };
   }
-}
+};
