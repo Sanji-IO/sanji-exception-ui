@@ -9,4 +9,4 @@ let app = angular.module('sanji.exception', [sjLogger]);
 app.config(config);
 app.provider('exceptionHandler', ExceptionHandlerProvider);
 app.service('exception', ExceptionService);
-export default app = app.name
+export default app = app.name;
