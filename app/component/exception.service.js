@@ -13,7 +13,7 @@ class ExceptionService {
       let newMessage;
       if ('object' === typeof e && e.data && e.data.message) { // handling like http request error
         thrownDescription = '\n' + e.data.message;
-        newMessage = message + thrownDescription;
+        newMessage = ( e.data.i18n ) ? message : message + thrownDescription;
         logger.error(newMessage, e);
         return $q.reject(e);
       }

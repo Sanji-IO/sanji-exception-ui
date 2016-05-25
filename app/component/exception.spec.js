@@ -65,5 +65,15 @@ describe('Service: exception', function() {
       component.catcher('somthing was wrong!')({data: { message: 'Internal Error!', status: 500 }});
       expect(string).to.equal('[Error]\n[Reason]');
     });
+
+    it('should log exception with i18n reason', function () {
+      let string = '';
+      let error = { message: 'Internal Error!', status: 500, i18n: 'INTERNAL_ERROR' };
+      logger.error = function() {
+        return string += '[i18n Code]';
+      };
+      component.catcher(error.i18n)({data: error});
+      expect(string).to.equal('[i18n Code]');
+    });
   });
 });
