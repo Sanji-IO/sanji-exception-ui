@@ -2,7 +2,7 @@
   "name": "sanji-exception-ui",
   "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
   "description": "sanji-exception-ui UI",
-  "version": "0.0.0-semantically-released",
+  "version": "1.2.7",
   "main": "dist/sanji-exception-ui.js",
   "config": {
     "ghooks": {
