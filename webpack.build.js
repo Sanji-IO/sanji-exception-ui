@@ -25,6 +25,10 @@ config.externals = {
   }
 };
 
+config.module.postLoaders = [
+  {test: /\.js$/, loader: 'ng-annotate', exclude: /(node_modules)/}
+];
+
 config.plugins.push(
   new webpack.optimize.DedupePlugin(),
   new webpack.LoaderOptionsPlugin({
