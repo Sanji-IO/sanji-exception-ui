@@ -25,11 +25,10 @@ config.externals = {
 };
 
 config.module.rules = [
-  {test: /\.js$/, loader: 'ng-annotate', exclude: /(node_modules)/, enforce: 'post'},
+  {test: /\.js$/, loader: 'ng-annotate-loader', exclude: /(node_modules)/, enforce: 'post'},
 ].concat(config.module.rules);
 
 config.plugins.push(
-  new webpack.optimize.DedupePlugin(),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false,
